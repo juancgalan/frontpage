@@ -1,29 +1,42 @@
 {
-  "name": "bulma-start",
-  "version": "0.0.3",
-  "description": "Start package for Bulma",
+  "name": "frontpage",
+  "version": "0.0.1",
+  "description": "Personal Web Page",
   "keywords": [
     "sass",
     "bulma",
     "css",
     "start"
   ],
-  "author": "Jeremy Thomas <bbxdesign@gmail.com> (http://jgthms.com)",
+  "author": "Juan Carlos Galan Hernandez",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jgthms/bulma-start.git"
+    "url": "git+https://github.com/juancgalan/frontpage.git"
   },
+  "private": true,
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "autoprefixer": "^9.4.7",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015-ie": "^6.7.0",
+    "babel-loader": "^8.0.5",
     "bulma": "^0.7.2",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
     "http-server": "^0.11.1",
-    "node-sass": "^4.11.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.1.1"
+    "postcss-cli": "^6.1.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
   },
   "scripts": {
     "css-deploy": "npm run css-build && npm run css-postcss",
@@ -33,7 +46,15 @@
     "deploy": "npm run css-deploy && npm run js-build",
     "js-build": "babel _javascript --out-dir lib",
     "js-watch": "npm run js-build -- --watch",
-    "serve":  "http-server",
-    "start": "npm-run-all --parallel css-watch js-watch serve"
+    "serve": "http-server",
+    "start": "npm-run-all --parallel css-watch js-watch serve",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode  production",
+    "watch": "webpack-dev-server"
+  },
+  "dependencies": {
+    "animate.css": "^3.7.0",
+    "fullpage-vue": "^1.8.3",
+    "vue": "^2.6.10"
   }
 }
