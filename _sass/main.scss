@@ -28,8 +28,13 @@ $primary-invert: $pink-invert;
 
 @import "../node_modules/bulma/bulma";
 
+html {
+    overscroll-behavior-y: none;
+}
+
 body {
   background-color: white;
+  overscroll-behavior-y: none;
 }
 
 .page-container {
@@ -38,4 +43,39 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
+}
+
+$pagination-size: 0.2em;
+$pagination-selected-size: 1.5em;
+
+.pagination {
+    &.button-size {
+        font-size: $pagination-size
+    }
+}
+
+.pager {
+    position: fixed;
+    right: 10px;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+}
+
+.is-current {
+    &.current-size {
+        font-size: $pagination-selected-size
+    }
+}
+
+.vertical-flow {
+    flex-direction: column;
+}
+
+.page {
+    height: 100%;
+}
+
+.part-0 {
+    height: 100vh;
 }
